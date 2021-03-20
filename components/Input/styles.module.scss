@@ -1,0 +1,64 @@
+.iconify {
+  z-index: 1;
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  width: 30px;
+  height: 30px;
+  color: #333337;
+}
+
+.query {
+  width: 950px;
+  padding: 30px 180px 30px 125px;
+  background-color: #626269;
+  color: #e5e5e5;
+  border-radius: 20px;
+  border: none;
+  font-size: 1.5rem;
+  outline: none;
+  box-shadow: 0px 5px 25px rgba(67, 67, 72, 0.25);
+  &:focus,
+  &:focus + .radio {
+    background-color: #e5e5e5;
+    color: #434348;
+  }
+  &::placeholder {
+    color: #e5e5e5;
+  }
+}
+
+.radio {
+  height: 100%;
+  position: absolute;
+  right: 50px;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #e5e5e5;
+  align-items: flex-end;
+}
+
+.container {
+  height: fit-content;
+  & label {
+    font-family: "Roboto", sans-serif;
+  }
+}
+
+.container__input {
+  position: relative;
+  margin: 5% auto 0;
+  text-align: center;
+  width: fit-content;
+}
+
+.radioInput {
+  margin: 0 0 0 5px;
+  cursor: pointer;
+}
+
+.inputOuter {
+  position: relative;
+}

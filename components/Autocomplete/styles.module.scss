@@ -1,0 +1,74 @@
+.link {
+  margin-right: 15px;
+}
+
+.autocompleteStyling {
+  margin: -20px auto 0;
+  padding: 50px 50px 30px;
+  border-radius: 0 0 20px 20px;
+  background-color: #e5e5e5;
+  color: #434348;
+}
+
+.autocompleteItems {
+  text-align: left;
+  overflow: auto;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  margin: auto;
+  max-height: 300px;
+  color: #434348;
+  &::-webkit-scrollbar {
+    width: 10px;
+    background-color: #333337;
+    border-radius: 9em;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #626269;
+    border-radius: 9em;
+  }
+}
+
+.listDiv {
+  padding: 15px;
+  margin-right: 20px;
+  max-width: fit-content;
+  min-width: -webkit-fill-available;
+  cursor: pointer;
+}
+
+.posters {
+  text-align: center;
+  max-height: fit-content;
+  max-width: fit-content;
+  display: flex;
+  justify-content: center;
+}
+
+.postersDiv {
+  margin: 0;
+  padding: 25px;
+  max-width: fit-content;
+  cursor: pointer;
+}
+
+.filmTitle {
+  margin: 15px auto 10px;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.filmYear {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.filmPoster {
+  width: 220px;
+}
+
+.active {
+  background-color: #626269;
+  color: #e5e5e5;
+}
