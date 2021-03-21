@@ -15,14 +15,12 @@ export type AutocompleteProps = {
 
 const useFindFilm = (filmName: string) => {
   const [error, setError] = React.useState(null);
-  const [query, setQuery] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
   const [items, setItems] = React.useState<Film[]>([]);
 
   const fetchFilms = async () => {
     try {
       setLoading(true);
-      setQuery(true);
       const result = await apiCall(filmName);
       setLoading(false);
       setItems(result.results);
@@ -40,12 +38,12 @@ const useFindFilm = (filmName: string) => {
     }
   }, [filmName]);
 
-  return { items, loading, error, query };
+  return { items, loading, error };
 };
 
 export const Autocomplete: React.FC<AutocompleteProps> = (props) => {
   const { templateType, filmName } = props;
-  const { items, loading, error, query } = useFindFilm(filmName);
+  const { items, loading, error } = useFindFilm(filmName);
   const Template = templates[templateType];
   const films = templateType === "Poster" ? items.slice(0, 3) : items;
   const [focus, setFocus] = useRoveFocus(films.length);
@@ -60,34 +58,32 @@ export const Autocomplete: React.FC<AutocompleteProps> = (props) => {
     return <div className={styles.autocompleteStyling}>Loading...</div>;
   }
 
-  if (!query) {
+  if (!filmName) {
     return null;
   }
 
-  if (query && items.length === 0) {
+  if (filmName && items.length === 0) {
     return <div className={styles.autocompleteStyling}>No results</div>;
   }
 
-  if (query && items.length > 0) {
-    return (
-      <div className={styles.autocompleteStyling}>
-        <div
-          className={classNames(styles.autocompleteItems, {
-            [styles.posters]: templateType === "Poster",
-          })}
-        >
-          {films.map((film, i) => (
-            <Template
-              {...film}
-              key={film.id}
-              index={i}
-              items={films}
-              focus={focus === i}
-              setFocus={setFocus}
-            />
-          ))}
-        </div>
+  return (
+    <div className={styles.autocompleteStyling}>
+      <div
+        className={classNames(styles.autocompleteItems, {
+          [styles.posters]: templateType === "Poster",
+        })}
+      >
+        {films.map((film, i) => (
+          <Template
+            {...film}
+            key={film.id}
+            index={i}
+            items={films}
+            focus={focus === i}
+            setFocus={setFocus}
+          />
+        ))}
       </div>
-    );
-  }
+    </div>
+  );
 };

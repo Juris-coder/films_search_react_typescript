@@ -8,7 +8,7 @@ export const useRoveFocus: FocusProps = (size) => {
   const [currentFocus, setCurrentFocus] = React.useState(0);
 
   const handleKeyDown = React.useCallback(
-    (e) => {
+    (e: KeyboardEvent) => {
       if (e.keyCode === 40) {
         // Down arrow
         e.preventDefault();

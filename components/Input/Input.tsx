@@ -10,7 +10,7 @@ const templateNames = Object.keys(templates);
 
 export type InputProps = {};
 
-export const Input: React.FC<InputProps> = (props) => {
+export const Input: React.FC<InputProps> = () => {
   const [filmName, setFilmName] = React.useState("");
   const [template, setTemplate] = React.useState<AutocompleteListTemplate>(
     "Poster"
