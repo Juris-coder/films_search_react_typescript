@@ -10,7 +10,7 @@ const BaseLayoutMemo: React.FC<BaseLayoutProps> = (props) => {
   const { children } = props;
 
   return (
-    <div>
+    <div className={styles.mainContainer}>
       <Input />
       {children}
       <Footer />

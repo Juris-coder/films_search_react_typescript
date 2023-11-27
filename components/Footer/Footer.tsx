@@ -7,12 +7,7 @@ export type FooterProps = {};
 export const Footer: React.FC<FooterProps> = () => {
   return (
     <footer className={styles.image}>
-      <Image
-        src="/../public/images/logo.png"
-        alt="logo"
-        width="220px"
-        height="50px"
-      />
+      <Image src="/images/logo.png" alt="logo" width={220} height={50} />
     </footer>
   );
 };

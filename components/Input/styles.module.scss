@@ -38,6 +38,7 @@
   justify-content: center;
   color: #e5e5e5;
   align-items: flex-end;
+  gap: 4px;
 }
 
 .container {
@@ -61,4 +62,10 @@
 
 .inputOuter {
   position: relative;
+}
+
+.label {
+  display: flex;
+  align-items: flex-end;
+  line-height: 1;
 }

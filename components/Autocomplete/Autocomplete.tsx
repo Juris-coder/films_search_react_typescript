@@ -24,7 +24,7 @@ const useFindFilm = (filmName: string) => {
       const result = await apiCall(filmName);
       setLoading(false);
       setItems(result.results);
-    } catch (error) {
+    } catch (error: any) {
       setItems([]);
       setError(error);
       setLoading(false);

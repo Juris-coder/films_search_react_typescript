@@ -12,9 +12,8 @@ export type InputProps = {};
 
 export const Input: React.FC<InputProps> = () => {
   const [filmName, setFilmName] = React.useState("");
-  const [template, setTemplate] = React.useState<AutocompleteListTemplate>(
-    "Poster"
-  );
+  const [template, setTemplate] =
+    React.useState<AutocompleteListTemplate>("Poster");
 
   return (
     <div className={styles.container}>
@@ -30,7 +29,7 @@ export const Input: React.FC<InputProps> = () => {
           <div className={styles.radio}>
             {templateNames.map((templateName) => (
               <div key={templateName}>
-                <label>
+                <label className={styles.label}>
                   {templateName}
                   <input
                     className={styles.radioInput}
